@@ -90,11 +90,8 @@ function Home() {
             
             (
               <a href={`/allGenre/${item.id}`}
-              className=' rounded-lg p-1  flex justify-center 
-               items-center text-xl m-2 bg-slate-600 
-               '
-              
-              
+              className=' rounded-md h-[35px] px-2 py-1 text-wrap flex justify-center 
+               items-center ml-3 bg-slate-600 '
               >{item.name}</a>
             ))}
 
