@@ -11,7 +11,8 @@ const upcoming="upcoming"
 const nowPlaying="now_playing"
 const popular='popular'
 const topRated="top_rated"
-const imgurl="https://image.tmdb.org/t/p/original"
+const imgUrl = "https://image.tmdb.org/t/p/original";
+
 
 
 
@@ -31,6 +32,7 @@ function Home() {
     const fetchUpcoming=async ()=>{
      const {data:{results}}=await axios.get(`${url}/movie/${upcoming}?api_key=${apikey}`)
     setUpcomingMovies(results)
+    console.log(upcomingMovies);
     
     }
 
@@ -45,7 +47,7 @@ function Home() {
     const fetchPopular=async ()=>{
       const {data:{results}}=await axios.get(`${url}/movie/${popular}?api_key=${apikey}`)
       setPopularMovies(results)
-      console.log(results)
+      // console.log(results)
      
      }
 
@@ -60,7 +62,7 @@ function Home() {
      const getAllGenre=async ()=>{
       const {data:{genres}}=await axios.get(`${url}/genre/movie/list?api_key=${apikey}`)
       setAllGenre(genres)
-      console.log(genres);
+      // console.log(genres);
      
      }
 
@@ -74,9 +76,31 @@ function Home() {
 
   }
   ,[])
+  console.log(upcomingMovies);
+  const n=upcomingMovies[0].poster_path;
+  console.log(n);
+
+
 
   return (
     <div>
+
+<div
+                className="banner"
+                style={{
+                    backgroundImage: popularMovies[0]
+                        ? `url(${`${imgUrl}/${popularMovies[0].poster_path}`})`
+                        : "rgb(16, 16, 16)",
+                }}
+            >
+                {popularMovies[0] && <h1>{popularMovies[0].original_title}</h1>}
+                {popularMovies[0] && <p>{popularMovies[0].overview}</p>}
+
+                <div>
+                    <button><BiPlay /> Play  </button>
+                    <button>My List <AiOutlinePlus /> </button>
+                </div>
+            </div>
       
          <Rows title="Upcoming" arr={upcomingMovies}/>
          <Rows title="Now Playing" arr={nowPlayingMovies}/>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar,HStack,Text } from '@chakra-ui/react'
 
-function Messages({text,uri,user="other"}) {
+function Messages({text,uri,user="other",name}) {
   return (
 
     <HStack alignSelf={user==='me'? "flex-end" :"flex-start"} 
@@ -13,18 +13,13 @@ function Messages({text,uri,user="other"}) {
         }
 
 
-        if (text=="") {
-        }
-        else{
         <Text px={1} maxW={120}>{text}</Text>
-
-        }
+       
 
 
         {
             user==="me" && <Avatar size={"sm"} src={uri}/>
         }
-
     </HStack>
 
     )
