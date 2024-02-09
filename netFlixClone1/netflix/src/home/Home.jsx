@@ -1,7 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios  from 'axios'
 import Rows from '../comps/rows/Rows'
-import Banner from '../comps/banner/Banner'
+import { FaPlay } from "react-icons/fa";
+import { GrAdd } from "react-icons/gr";
+
+
 
 
 
@@ -26,7 +29,8 @@ function Home() {
   const[topRatedMovies,setTopRatedMovies]=useState([])
   const [allGenre,setAllGenre]=useState([])
 
-
+const a=upcomingMovies[0];
+console.log(a)
 
   useEffect(()=>{
     const fetchUpcoming=async ()=>{
@@ -77,30 +81,30 @@ function Home() {
   }
   ,[])
   console.log(upcomingMovies);
-  const n=upcomingMovies[0].poster_path;
-  console.log(n);
+  // const n=upcomingMovies[0].poster_path;
+  // console.log(n);
 
 
 
   return (
     <div>
-
-<div
+ <div
                 className="banner"
                 style={{
-                    backgroundImage: popularMovies[0]
-                        ? `url(${`${imgUrl}/${popularMovies[0].poster_path}`})`
+                    backgroundImage: popularMovies[9]
+                        ? `url(${`${imgUrl}/${popularMovies[9].poster_path}`})`
                         : "rgb(16, 16, 16)",
                 }}
             >
-                {popularMovies[0] && <h1>{popularMovies[0].original_title}</h1>}
-                {popularMovies[0] && <p>{popularMovies[0].overview}</p>}
+                {popularMovies[0] && <h1>{popularMovies[9].original_title}</h1>}
+                {popularMovies[0] && <p>{popularMovies[9].overview}</p>}
 
-                <div>
-                    <button><BiPlay /> Play  </button>
-                    <button>My List <AiOutlinePlus /> </button>
+                <div className='divOnBanner'>
+                    <button className='play'><FaPlay /> Play  </button>
+                    <button className='mylist'><GrAdd /> My List  </button>
                 </div>
             </div>
+
       
          <Rows title="Upcoming" arr={upcomingMovies}/>
          <Rows title="Now Playing" arr={nowPlayingMovies}/>
@@ -113,7 +117,7 @@ function Home() {
             {allGenre.map((item)=>
             
             (
-              <a href={`/allGenre/${item.id}`}
+              <a href={`/allGenre/${item.id}`} key={item.id} 
               className=' rounded-md h-[35px] px-2 py-1 text-wrap flex justify-center 
                items-center ml-3 bg-slate-600 '
               >{item.name}</a>
