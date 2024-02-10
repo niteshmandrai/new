@@ -41,7 +41,7 @@ function CoinDetails() {
       const {data:chartData}=await 
       axios.get(`https://api.coingecko.com/api/v3/coins/${params.id}/market_chart?vs_currency=${currency}&days=${days}`)
   
-      console.log(chartData)
+      // console.log(chartData)
       setCoin(data)
       setChartArray(chartData.prices)
       setLoading(false)

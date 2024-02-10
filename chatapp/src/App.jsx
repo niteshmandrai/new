@@ -63,8 +63,8 @@ const submitHandler = async(e)=>{
 useEffect(()=>{
   onAuthStateChanged(auth,(data)=>{
     setUser(data)
-    console.log(data);
-    console.log(data.displayName);
+    // console.log(data);
+    // console.log(data.displayName);
     setName(data.displayName);
   })
 },[])

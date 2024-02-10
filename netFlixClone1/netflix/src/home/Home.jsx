@@ -30,13 +30,13 @@ function Home() {
   const [allGenre,setAllGenre]=useState([])
 
 const a=upcomingMovies[0];
-console.log(a)
+// console.log(a)
 
   useEffect(()=>{
     const fetchUpcoming=async ()=>{
      const {data:{results}}=await axios.get(`${url}/movie/${upcoming}?api_key=${apikey}`)
     setUpcomingMovies(results)
-    console.log(upcomingMovies);
+    // console.log(upcomingMovies);
     
     }
 
@@ -80,7 +80,7 @@ console.log(a)
 
   }
   ,[])
-  console.log(upcomingMovies);
+  // console.log(upcomingMovies);
   // const n=upcomingMovies[0].poster_path;
   // console.log(n);
 
