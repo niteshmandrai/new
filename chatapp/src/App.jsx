@@ -116,7 +116,7 @@ useEffect(()=>{
                   user={item.uid===user.uid?"me":"other"} 
                   text={item.text}
                   uri={item.uri}
-                  name={item.displayName}
+                  name={user.displayName}
                   
                   />
                 })
@@ -129,8 +129,10 @@ useEffect(()=>{
            style={{width:'100%'}}>
             <HStack>
               <Text>{name}</Text>
-                  <Input value={message} onChange={(e)=>{setMessage(e.target.value)}}  
-                   placeholder='Enter A Message  . . . .'/>
+                  <Input 
+                  value={message}
+                  onChange={(e)=>{setMessage(e.target.value)}}  
+                  placeholder='Enter A Message  . . . .'/>
                   <Button className='hover:text-black ' 
                   type='submit'  color='whitesmoke'  
                   bg='green.600'>Send</Button>
