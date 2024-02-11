@@ -37,7 +37,7 @@ function Login() {
    '>
     <div className='
      bg-white rounded-lg flex
-     flex-col items-center w-[300px]'>
+     flex-col items-center justify-center  w-[300px]'>
         <span className=' font-semibold text-purple-600
          text-2xl'>Chat App</span>
         <span className=' text-purple-500
@@ -49,8 +49,9 @@ function Login() {
             <input className='outline-none px-8
              border-b-2 border-slate-300   p-1 m-2' type="password" placeholder='Passsword' />
            
-            <button className='bg-green-500 mt-2
-            box-border h-8 rounded-lg text-white
+            <button className='bg-green-500 w-[90%]  mt-2
+            box-border self-center 
+            h-8 rounded-lg text-white
            '>Sign in</button>
            
              {

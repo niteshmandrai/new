@@ -109,8 +109,9 @@ uploadTask.on(
                 className='text-purple-500 '>
                     Add an avatar</span>
             </label>
-            <button className='bg-green-500 mt-2
-             box-border h-8  text-white
+            <button className='bg-green-500 
+            w-[90%]  mt-2
+            box-border self-center  h-8  text-white
              rounded-lg
             '>Sign Up</button>
             {
