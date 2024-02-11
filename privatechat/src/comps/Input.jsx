@@ -100,9 +100,9 @@ const Input = () => {
       value={text}
       onChange={(e)=>setText(e.target.value)}
       type="text" 
-      placeholder='  Type a message...' 
+      placeholder='Type a message...' 
       className='flex justify-center ml-[10px] outline-none
-       w-[70%] h-[73%] mb-[2px] 
+       w-[70%] h-[73%] mb-[2px] text-[3vw] lg:text-[22px]
        border-b-[2px] border-black
      '/>
 

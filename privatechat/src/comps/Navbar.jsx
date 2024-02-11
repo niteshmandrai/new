@@ -26,7 +26,7 @@ function Navbar() {
               {currentUser.displayName}</span>
             <button onClick={()=>signOut(auth)} 
             className='text-white 
-            rounded-md text-[13px]
+            rounded-md text-[60%] min-w-[45px]
              h-[28px] mr-1 w-[30%] 
              font-[500]  bg-red-500'
              >LOGOUT</button>
