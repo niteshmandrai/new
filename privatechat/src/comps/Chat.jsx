@@ -20,9 +20,10 @@ function Chat() {
 
 
   return (
-    <div   className='bg-slate-100
-     w-[100%] justify-center items-center '>
-        <div 
+    <div   className='bg-slate-100 
+     w-[60%] justify-center items-center '>
+       {
+        data.user &&  <div 
         className='flex   bg-slate-700 
          h-[50px] w-[100%]
          justify-between items-center
@@ -38,12 +39,14 @@ function Chat() {
            }
 
 
-            <span 
-            className='font-bold text-white
-             text-xl ml-2 '>
-            {data.user?.displayName}
-             </span>
-
+           {
+             data.user?.displayName&&<span 
+             className='font-bold text-white
+              text-xl ml-2 '>
+             {data.user?.displayName}
+              </span>
+ 
+           }
 
             </div>
 
@@ -59,6 +62,7 @@ function Chat() {
             </div>
             
         </div>
+       }
         <Messages/>
         <Input/>
     </div>

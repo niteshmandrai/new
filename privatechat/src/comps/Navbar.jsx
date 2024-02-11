@@ -17,8 +17,8 @@ function Navbar() {
         justify-between'>
             <img  src={currentUser.photoURL} alt=""
              className=' flex 
-            justify-center items-center h-[25px] w-[25px]
-            sm:h-[30px] sm:w-[30px]
+            justify-center items-center h-[30px] w-[30px]
+            sm:h-[35px] sm:w-[35px]
             md:h-[40px] md:w-[40px]
              rounded-3xl ml-1'/>
             <span className='flex text-[80%] 

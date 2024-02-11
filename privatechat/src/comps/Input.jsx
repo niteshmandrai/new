@@ -113,7 +113,7 @@ const Input = () => {
 
           <button
           onClick={handleSend}
-          className='bg-green-500 ml-[50px]
+          className='bg-green-500 ml-[20px]
             rounded-lg h-[70%]
             w-[60%] min-w-[100px]
              hover:border-[1.5px] 
